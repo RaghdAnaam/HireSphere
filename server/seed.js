@@ -4,7 +4,12 @@ import { getConfig } from './config.js'
 import { Job } from './models/Job.js'
 
 try {
-  await mongoose.connect(getConfig().mongoUri)
+  console.log('Connecting to MongoDB...')
+  await mongoose.connect(getConfig().mongoUri, {
+    serverSelectionTimeoutMS: 10000,
+    connectTimeoutMS: 10000,
+  })
+  console.log('Connected. Seeding sample jobs...')
   await Promise.all(jobs.map((job) => {
     const salaryMin = Number(job.salary.replaceAll(',', '').match(/\d+/)?.[0])
     return Job.updateOne(
