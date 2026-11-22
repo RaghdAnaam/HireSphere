@@ -84,10 +84,3 @@ src/
   index.css       Global tokens and baseline styles
 ```
 
-## Future implementation stages
-
-Next stages include seeker profiles and applications, employer job publishing and applicant management, end-to-end tests, and production deployment hardening. The current backend is an MVP and should not be treated as a finished production job platform.
-
-## Screenshots
-
-Add screenshots after reviewing the running application.
